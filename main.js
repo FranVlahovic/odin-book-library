@@ -1,14 +1,55 @@
-// Get the dialog element and buttons
-const searchDialog = document.getElementById('search-dialog');
-const searchButton = document.querySelector('.search-button'); // Use class selector
-const closeSearchButton = document.getElementById('close-search');
+// Get all the buttons inside side-content
+const sideButtons = document.querySelectorAll('.side-content button');
+const homeButton = document.querySelector('.home-button');
 
-// Open the dialog when the search button is clicked
-searchButton.addEventListener('click', () => {
-    searchDialog.showModal();
+function setActiveButton() {
+    // Get the current page URL
+    const currentPage = window.location.href;
+    
+    // Remove active class from all buttons first
+    sideButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Apply the active class based on the current URL
+    if (currentPage.includes('index.html')) {
+        homeButton.classList.add('active');
+    } else if (currentPage.includes('trending.html')) {
+        document.querySelector('.trending-button').classList.add('active');
+    } else if (currentPage.includes('favorites.html')) {
+        document.querySelector('.favorites-button').classList.add('active');
+    }
+}
+
+// Call setActiveButton on page load
+setActiveButton();
+
+// Function to handle the active state
+sideButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        sideButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to the clicked button
+        this.classList.add('active');
+    });
 });
 
-// Close the dialog when the close button is clicked
-closeSearchButton.addEventListener('click', () => {
-    searchDialog.close();
-});
+
+const myLibrary = [];
+
+function Book(title, author, pages, isRead) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.isRead = isRead;
+  this.populate = function(){
+
+  }
+}
+
+function addBookToLibrary(title, author, pages, isRead) {
+  const newBook = new Book(title, author, pages, isRead)
+  myLibrary.push(newBook);
+  return
+}

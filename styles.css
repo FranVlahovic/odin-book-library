@@ -68,7 +68,13 @@ img {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 3em;
+}
+.lib-content, .edit-lib-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
 }
 
 .side-content {
@@ -79,6 +85,11 @@ img {
 .side-content:hover {
     border-right: 3px solid #db0000;
 }
+.side-content button.active img {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(98%) saturate(4844%) hue-rotate(360deg) brightness(92%) contrast(117%);
+    /* Red filter (similar to the notification icon color) */
+}
+
 .side-content, .side-content button {
     border: none;
     background-color: inherit;
