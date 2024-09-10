@@ -9,48 +9,45 @@
 <body>
     <div class="overlay">
         <form action="/" method="post">
-            <i id="close-btn" class="fa-solid fa-circle-xmark" style="color: red;"></i>
-            <h3>Your Book</h3>
-
+            <fieldset class="close-fieldset">
+                <input type="image" id="close-btn" src="icons/window-close.svg" alt="Close button">
+            </fieldset>
+            <h3>New Book</h3>
             <fieldset>
                 <div class="form-column">
-                    <input type="file" id="book-image" name="bookImage" accept="image/*">
+                    <label for="book-title"></label>
+                    <input type="text" id="book-title" name="bookTitle" placeholder="Book Title" required>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div class="form-column">
-                    <label for="book-title">TITLE</label>
-                    <input type="text" id="book-title" name="bookTitle" required>
+                    <label for="book-author"></label>
+                    <input type="text" id="book-author" name="bookAuthor" placeholder="Author" required>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div class="form-column">
-                    <label for="book-author">AUTHOR</label>
-                    <input type="text" id="book-author" name="bookAuthor" required>
+                    <label for="book-pages"></label>
+                    <input type="number" id="book-pages" name="bookPages" placeholder="Number of pages">
                 </div>
             </fieldset>
 
             <fieldset>
-                <div class="form-column">
-                    <label for="book-pages"><strong>NUMBER OF PAGES</strong></label>
-                    <input type="number" id="book-pages" name="bookPages">
-                </div>
+                <textarea id="summary" name="summary" placeholder="Book summary"></textarea>
             </fieldset>
 
             <fieldset>
-                <div class="form-column">
-                    <label>HAVE YOU READ THIS BOOK?</label>
-                    <input type="radio" id="book-read-yes" name="bookRead" value="true"><label for="book-read-yes">Yes</label>
-                    <input type="radio" id="book-read-no" name="bookRead" value="false" checked><label for="book-read-no">No</label>
+                <div class="form-row">
+                    <input type="checkbox" id="book-read-yes" name="bookRead" value="true"><label for="book-read-yes">Finished Reading</label>
                 </div>
             </fieldset>
 
-            <button id="add-book-button" type="button">ADD TO LIBRARY</button>
+            <button id="add-book-button" type="button">Add to Library</button>
         </form>
     </div>
-    
+
     <div class="main-container">
         <div class="header">
             <div class="logo">
