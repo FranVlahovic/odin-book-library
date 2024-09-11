@@ -14,7 +14,6 @@ img {
 .main-container {
     display: grid;
     grid-template-columns: 0.4fr 4fr;
-    background-color: rgb(17, 17, 17);
 }
 
 .header {
@@ -66,7 +65,7 @@ img {
 
 .sidebar {
     background-color: black;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -100,6 +99,87 @@ img {
     filter: invert(1);
     width: 3em;
 }
+
+.home-container {
+    padding: 20px;
+    background-color: rgb(8, 8, 8);
+}
+.home-container h2 {
+    color:white;
+}
+
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    width: 100%;
+}
+.card {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 4px;
+    position: relative;
+    overflow: visible;
+    padding: 10px;
+    z-index: 1;
+}
+.image-upload-container {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    position: relative;
+    height: 20em;
+    z-index: 1;
+}
+.remove-card-container, .favorite-card-container {
+    position: absolute;
+    display: block;
+    z-index: 9999;
+}
+.remove-card-container {
+    top: 10px;
+    right: 10px;
+    height: 2.5em;
+    width: 2.5em;
+    visibility: visible;
+    display: block;
+}
+.delete-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(11%) sepia(98%) saturate(4844%) hue-rotate(360deg) brightness(92%) contrast(117%);
+    z-index: 1001;
+}
+.delete-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    z-index: 10000;
+}
+.favorite-card-container {
+    top: 10px;
+    left: 10px;
+}
+.info-card-container {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.summary-card-container {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+
+
+
 form {
   background-color: black;
   display: flex;
@@ -200,9 +280,9 @@ input[type="checkbox"]:checked::before {
     left:50%;
     transform:translate(-50%, -50%);
     background-color: black; 
-    opacity: 0.8;
     padding: 0 50px 60px 50px;
     border-radius: 15px;
+    z-index: 1000;
 }
 
 textarea {
@@ -215,3 +295,8 @@ textarea {
     color: white;
     resize: none; 
 }
+
+.delete-btn {
+  display:none;
+}
+
