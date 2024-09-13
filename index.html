@@ -37,6 +37,13 @@
             <fieldset>
                 <textarea id="book-summary" name="bookSummary" placeholder="Book summary"></textarea>
             </fieldset>
+          
+           <fieldset>
+                <button class="image-input-column" id="file-button" type="button">
+                    <label id="image-title">Add Image</label>
+                    <input type="file" accept="image/*" name="images" id="images" class="image-input" style="display: none;"/>
+                </button>
+            </fieldset>
 
             <fieldset>
                 <div class="form-row">
@@ -54,6 +61,19 @@
                 <img src="icons/bookshelf.svg" alt="Dashboard Logo" class="svg">
                 <h1 class="logo-title">FLib</h1>
             </div>
+            <div class="edit-lib-content">
+                <div class="top-content">
+                    <button class="search-button"><img src="icons/magnify.svg" alt=""></button>
+                </div>
+    
+                <div class="top-content">
+                    <button class="add-button"><img src="icons/plus-circle.svg" alt=""></button>
+                </div>
+    
+                <div class="top-content">
+                    <button class="remove-button"><img src="icons/minus-circle.svg" alt=""></button>
+                </div>
+            </div>
             <div class="profile-container">
                 <img src="icons/bell-ring.svg" alt="Notification icon" class="notification-icon">
                 <div>
@@ -65,28 +85,15 @@
         <div class="sidebar">
             <div class="lib-content">
                 <div class="side-content">
-                    <button class="favorites-button"><a href="favorites.html"><img src="icons/star.svg" alt=""></a></button>
+                    <button class="favorites-button" id="favorites"><a href="favorites.html"><img src="icons/star.svg" alt=""></a></button>
                </div>
-    
-                <div class="side-content">
-                    <button class="trending-button"><a href="trending.html"><img src="icons/trending-up.svg" alt=""></a></button>
-                </div>
-            </div>
-            
-            <div class="side-content">
-                <button class="home-button"><a href="index.html"><img src="icons/home.svg" alt=""></a></button>
-            </div>
-            <div class="edit-lib-content">
-                <div class="side-content">
-                    <button class="search-button"><img src="icons/magnify.svg" alt=""></button>
+
+               <div class="side-content">
+                    <button class="home-button"><a href="index.html"><img src="icons/home.svg" alt=""></a></button>
                 </div>
     
                 <div class="side-content">
-                    <button class="add-button"><img src="icons/plus-circle.svg" alt=""></button>
-                </div>
-    
-                <div class="side-content">
-                    <button class="remove-button"><img src="icons/minus-circle.svg" alt=""></button>
+                    <button class="trending-button" id="trending"><a href="trending.html"><img src="icons/trending-up.svg" alt=""></a></button>
                 </div>
             </div>
         </div>
