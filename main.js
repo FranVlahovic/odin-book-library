@@ -20,6 +20,7 @@ const uploadButton = document.getElementById('file-button');
 const imageInput = document.getElementById('images');
 const imageTitle = document.getElementById('image-title');
 const imageContainer = document.querySelector('.image-upload-container')
+const trendingContainer = document.querySelector('.trending-books-container');
 
 
 function setActiveButton() {
@@ -75,6 +76,12 @@ addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading t
 addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://images.booksense.com/images/595/139/9780439139595.jpg');
 addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF894,1000_QL80_.jpg');
 
+document.addEventListener('DOMContentLoaded', () => {
+  addTrendingBook('Game of Thrones', 'George R.R.Martin', 694, 'NYT Best Seller','https://upload.wikimedia.org/wikipedia/en/thumb/9/93/AGameOfThrones.jpg/220px-AGameOfThrones.jpg');
+  addTrendingBook('Clash of Kings', 'George R.R.Martin', 761, 'Novel has been adapted for television as the second season of the HBO series Game of Thrones.', 'https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg');
+  addTrendingBook('Storm of Swords', 'George R.R.Martin', 973, 'The first half of the novel was adapted for television as the third season of the HBO show Game of Thrones.', 'https://upload.wikimedia.org/wikipedia/en/thumb/2/24/AStormOfSwords.jpg/220px-AStormOfSwords.jpg');
+});
+
 
 myLibrary.forEach(item => item.populate());
 
@@ -106,6 +113,23 @@ closeBtn.addEventListener("click", e => {
   overlay.style.display = "none";
 })
 
+function addTrendingBook(title, author, pages, summary, imageUrl) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.innerHTML = `
+      <div class="image-upload-container" style="background-image:url(${imageUrl})"></div>
+      <div class="info-card-container">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Author:</strong> ${author}</p>
+          <p><strong>Pages:</strong> ${pages ? pages : 'N/A'}</p>
+      </div>
+      <div class="summary-card-container">
+          <p class="summary-title"><strong>Summary:</strong></p>
+          <p>${summary}</p>
+      </div>
+  `;
+  trendingContainer.appendChild(card);
+}
 
 function addBookToLibrary(title, author, pages, summary, isRead, imageInput) {
   const newBook = new Book(title, author, pages, summary, isRead, imageInput)
@@ -159,17 +183,12 @@ function Book(title, author, pages, summary, isRead, imageUrl){
 
       </div>
       
-      <div class="favorite-card-container">
-        <button class="favorite-btn">
-          <img src="" alt="">
-        </button>
-      </div>
 
       <div class="info-card-container">
         <p><strong>Title:</strong> ${this.title}</p>
         <p><strong>Author:</strong> ${this.author}</p>
         <p><strong>Pages:</strong> ${this.pages ? this.pages : "N/A"}</p>
-        <p id="${myLibrary.indexOf(this)}-stat"><strong>Finished:</strong> ${this.isRead ? "Yes" : '<button class="read-btn"><img src="" alt=""></button>'}</p>
+        <p id="${myLibrary.indexOf(this)}-stat"><strong>Finished:</strong> ${this.isRead ? "Yes" : '<button class="read-btn"><img src="icons/plus-circle.svg" alt=""></button>'}</p>
       </div>
 
       <div class="summary-card-container">
@@ -177,7 +196,14 @@ function Book(title, author, pages, summary, isRead, imageUrl){
         <div class="summary-content">
           <p>${this.summary}</p>
         </div>
-      </div>`;
+      </div>
+      
+      <div class="favorite-card-container">
+        <button class="favorite-btn">
+          <img src="icons/star.svg" alt="">
+        </button>
+      </div>
+      `;
 
       const readBtn = card.querySelector(".read-btn");
       if (readBtn){
@@ -195,6 +221,5 @@ function Book(title, author, pages, summary, isRead, imageUrl){
           card.remove();
         }
       })
-
   }
 }
