@@ -4,7 +4,11 @@ const topButtons = document.querySelectorAll('.top-content button');
 const homeButton = document.querySelector('.home-button');
 const booksContainer = document.querySelector('.books-container');
 const overlay = document.querySelector('.overlay');
+const searchOverlay = document.querySelector('.search-overlay');
+const searchBtn = document.querySelector('.search-button');
+const searchCloseBtn = document.querySelector('#search-close-btn')
 const form = document.querySelector('form');
+const cards = document.querySelectorAll('.card')
 const closeBtn = document.querySelector('#close-btn');
 const openModelBtn = document.querySelector('.add-button');
 const addBookBtn = document.querySelector('#add-book-button');
@@ -21,7 +25,6 @@ const imageInput = document.getElementById('images');
 const imageTitle = document.getElementById('image-title');
 const imageContainer = document.querySelector('.image-upload-container')
 const trendingContainer = document.querySelector('.trending-books-container');
-
 
 function setActiveButton() {
     // Get the current page URL
@@ -100,17 +103,30 @@ addBookBtn.addEventListener("click", e => {
 })
 
 overlay.style.display = "none";
+searchOverlay.style.display = "none";
 
 openModelBtn.addEventListener("click", e => {
   if(overlay.style.display === "none"){
     overlay.style.display = "block";
   }
   else {
-    overlay.style.display = "none"
+    overlay.style.display = "none";
   }
 })
 closeBtn.addEventListener("click", e => {
   overlay.style.display = "none";
+})
+
+searchBtn.addEventListener("click", e => {
+  if(searchOverlay.style.display === "none"){
+    searchOverlay.style.display = "block";
+  }
+  else {
+    searchOverlay.style.display = "none";
+  }
+})
+searchCloseBtn.addEventListener("click", e => {
+  searchOverlay.style.display = "none";
 })
 
 function addTrendingBook(title, author, pages, summary, imageUrl) {
