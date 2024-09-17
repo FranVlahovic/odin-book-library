@@ -183,7 +183,7 @@ img {
 .favorite-card-container {
   display: block;
   position: absolute;
-  bottom: 4em;
+  bottom: 2.5em;
   right: 10.5em;
 }
 
@@ -218,7 +218,7 @@ img {
   width: 1.5em;
   position: absolute;
   right: 9.1em;
-  bottom: 14.8em;
+  bottom: 13.7em;
 }
 .favorite-btn {
   background-color: transparent;

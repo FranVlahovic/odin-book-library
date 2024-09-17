@@ -108,10 +108,10 @@ topButtons.forEach(button => {
 
 const myLibrary = [];
 
-addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://m.media-amazon.com/images/I/811t1pfIZXL._AC_UF1000,1000_QL80_.jpg');
-addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://images.booksense.com/images/866/064/9780439064866.jpg');
-addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://images.booksense.com/images/595/139/9780439139595.jpg');
-addBookToLibrary('Harry Potter', 'J.K.Rowling', 750, 'Througly enjoyed reading this book, its really fantastic!', true, 'https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF894,1000_QL80_.jpg');
+addBookToLibrary('Harry Potter and the Deathly Hallows', 'J.K. Rowling', 759, 'A gripping conclusion to the series with unexpected twists and a satisfying ending.', true, 'https://m.media-amazon.com/images/I/811t1pfIZXL._AC_UF1000,1000_QL80_.jpg');
+addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 341, 'An exciting second installment with more magical mysteries and a deeper dive into the wizarding world.', false, 'https://images.booksense.com/images/866/064/9780439064866.jpg');
+addBookToLibrary('Harry Potter and the Goblet of Fire', 'J.K. Rowling', 636, 'An action-packed fourth book with a thrilling tournament and dark developments that set the stage for the final battle.', true, 'https://images.booksense.com/images/595/139/9780439139595.jpg');
+addBookToLibrary('Harry Potter and the Philosopher\'s Stone', 'J.K. Rowling', 223, 'The enchanting start to the series, full of wonder, magical creatures, and the beginning of Harry Potter\'s journey.', false, 'https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF894,1000_QL80_.jpg');
 
 document.addEventListener('DOMContentLoaded', () => {
   addTrendingBook('Game of Thrones', 'George R.R.Martin', 694, 'NYT Best Seller','https://upload.wikimedia.org/wikipedia/en/thumb/9/93/AGameOfThrones.jpg/220px-AGameOfThrones.jpg');
