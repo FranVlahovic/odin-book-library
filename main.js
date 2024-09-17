@@ -12,7 +12,6 @@ const cards = document.querySelectorAll('.card')
 const closeBtn = document.querySelector('#close-btn');
 const openModelBtn = document.querySelector('.add-button');
 const addBookBtn = document.querySelector('#add-book-button');
-const favoriteBook = document.querySelector('.favorite-btn');
 const favoritesButton = document.getElementById('favorites');
 const trendingButton = document.getElementById('trending');
 const bookTitle = document.querySelector('#book-title');
@@ -25,6 +24,41 @@ const imageInput = document.getElementById('images');
 const imageTitle = document.getElementById('image-title');
 const imageContainer = document.querySelector('.image-upload-container')
 const trendingContainer = document.querySelector('.trending-books-container');
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById("searchbox");
+  const booksContainer = document.querySelector(".books-container");
+  const favoriteBtn = document.querySelectorAll('.favorite-btn');
+
+  favoriteBtn.forEach(button => {
+    button.addEventListener("click", ( )=> {
+      if(button.style.filter === "brightness(0) saturate(100%) invert(74%) sepia(92%) saturate(420%) hue-rotate(343deg) brightness(99%) contrast(86%)"){
+        button.style.filter = "invert(0)"
+      }
+      else {
+        button.style.filter = "brightness(0) saturate(100%) invert(74%) sepia(92%) saturate(420%) hue-rotate(343deg) brightness(99%) contrast(86%)"
+      }
+    });
+  });
+
+  function liveSearch(){
+    const searchQuery = searchInput.value.toLowerCase();
+    const cards = booksContainer.querySelectorAll(".card");
+    
+    cards.forEach(card => {
+      if(card.innerText.toLowerCase().includes(searchQuery)){
+        card.classList.remove("is-hidden");
+      }
+      else {
+        card.classList.add("is-hidden");
+      }
+    })
+  }
+  searchInput.addEventListener('input', liveSearch);
+  
+});
 
 function setActiveButton() {
     // Get the current page URL
