@@ -134,6 +134,7 @@ addBookBtn.addEventListener("click", e => {
   addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookSummary.value, bookIsRead, imageUrl);
   myLibrary[myLibrary.length - 1].populate();
   overlay.style.display = 'none';
+  form.reset();
 })
 
 overlay.style.display = "none";

@@ -28,7 +28,7 @@ img {
 
 .logo {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 2.5em 1fr;
   align-items: center;
   gap: 5px;
   font-size: 1.2em;
@@ -63,7 +63,7 @@ img {
 .profile-container div {
   display: grid;
   align-items: center;
-  grid-template-columns: 45px 1fr;
+  grid-template-columns: 3em 1fr;
   gap: 10px;
   padding-bottom: 15px;
 }
