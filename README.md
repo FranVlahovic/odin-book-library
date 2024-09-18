@@ -2,7 +2,7 @@
 
 This repository contains the **Book Library** project from The Odin Project, designed to help you practice JavaScript, HTML, and CSS by creating a digital library where users can add, remove, and manage books.
 
-![Book Library Preview](path/to/your/image.png)
+![screencapture-127-0-0-1-5500-index-html-2024-09-18-18_55_13](https://github.com/user-attachments/assets/daa88b1c-4b91-4974-8412-23b95f69f439)
 
 ## Table of Contents
 - [Description](#description)
